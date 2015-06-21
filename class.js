@@ -10,7 +10,7 @@
   this.Class = function(){};
 
   // Create a new Class that inherits from this class
-  Class.extend = function(prop) {
+  Class.extend = function(prop, className) {
     var _super = this.prototype;
 
     // Instantiate a base class (but only create the instance,
@@ -43,12 +43,18 @@
           prop[name];
     }
 
-    // The dummy class constructor
-    function Class() {
-      // All construction is actually done in the init method
-      if ( !initializing && this.init )
-        this.init.apply(this, arguments);
-    }
+     // The dummy class constructor
+    var newClass;
+		if(className){
+			eval('newClass = function ' + className +
+					'() {if ( !initializing && this.init )this.init.apply(this, arguments);}');
+		}else{
+			newClass = function Class() {
+				// All construction is actually done in the init method
+				if ( !initializing && this.init )
+					this.init.apply(this, arguments);
+			}
+		}
 
     // Populate our constructed prototype object
     Class.prototype = prototype;
