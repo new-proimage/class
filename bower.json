@@ -1,0 +1,27 @@
+{
+  "name": "class",
+  "main": "class.js",
+  "version": "0.0.0",
+  "homepage": "https://github.com/new-proimage/class",
+  "authors": [
+    "Moshe <moshemal@gmail.com>"
+  ],
+  "description": "Simple JavaScript Inheritance By John Resig",
+  "moduleType": [
+    "globals"
+  ],
+  "keywords": [
+    "class",
+    "'object",
+    "oriented'",
+    "inheritance"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
