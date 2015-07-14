@@ -57,14 +57,14 @@
 		}
 
     // Populate our constructed prototype object
-    Class.prototype = prototype;
+    newClass.prototype = prototype;
 
     // Enforce the constructor to be what we expect
-    Class.prototype.constructor = Class;
+    newClass.prototype.constructor = Class;
 
     // And make this class extendable
-    Class.extend = arguments.callee;
+    newClass.extend = arguments.callee;
 
-    return Class;
+    return newClass;
   };
 })();
